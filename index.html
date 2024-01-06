@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Book Bingo Card Generator</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>Book Bingo Card Generator</h1>
+  
+    <div class="disclaimer">
+      <p>⚠️ <b>Content Warning:</b>
+        <br />This generator provides only limited safety measures and may occasionally
+        produce offensive content.
+      </p>
+    </div>
+
+    <div id="loadingIndicator" style="display: none">
+      <p>Connecting to <a href="https://aihorde.net/" target="_blank">AI Horde</a>, please wait...</p>
+      <div id="generationInfo"></div>
+      <div id="timeRemaining"></div>
+    </div>
+  </div>
+
+  <div id="bingo-grid" class="bingo-grid"></div>
+
+  <div id="footer" style="display:none;">
+    <p>
+      <a href="#" onclick="window.print();">Save or Print Card</a>
+      | Generated on <a href="https://aihorde.net/" target="_blank">AI Horde</a>
+    </p>
+  </div>
+</body>
+
+</html>
