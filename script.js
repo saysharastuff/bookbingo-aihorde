@@ -231,7 +231,7 @@ function triggerTextGeneration() {
   if (countGenerations <= 3) {
     generateTextAsync(prompt)
       .then((response) => {
-        if (response && response.id) {
+        if (response?.id) {
           if (debug === true)
             console.log("Job Id", response.id);
 
@@ -270,9 +270,8 @@ $(document).ready(function() {
 
       generateTextAsync(prompt)
         .then((response) => {
-          if (response && response.id) {
+          if (response?.id) {
             showLoadingIndicator();
-            //console.log('Job Id', response.id);
             checkGenerationStatus(response.id);
           }
         })
@@ -292,14 +291,13 @@ function checkGenerationStatus(jobId) {
     .then((response) => {
       if (response.done) {
         if (
-          response &&
-          response.generations &&
-          response.generations[0] &&
-          response.generations[0].text
+          response?.generations &&
+          response?.generations[0] &&
+          response?.generations[0].text
         ) {
           if (debug === true)
             console.log(response)
-          generatedText = response.generations[0].text;
+          let generatedText = response.generations[0].text;
 
           validateAndRegenerateIfNeeded(generatedText);
         }
